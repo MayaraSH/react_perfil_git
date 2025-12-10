@@ -1,0 +1,17 @@
+.searchInput {
+    padding: 16px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda-input);
+    font-size: 18px;
+    width: 350px;
+    align-items: center;
+    background-color: var(--cor-fundo-input);
+    transition: border-color var(--transicao-padrao), box-shadow var(--transicao-padrao);
+}
+
+.searchInput::placeholder {
+    color: var(--cor-placeholder);
+}
+
+

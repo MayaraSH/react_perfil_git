@@ -1,0 +1,83 @@
+/* ---------- RESET E BASE GERAL ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ---------- VARIÁVEIS GLOBAIS ---------- */
+:root {
+    --corPrincipal: #f6d52f;
+    --corSecundaria: #111;
+
+    --cor-primaria: #3498db;
+    --cor-primaria-hover: #2980b9;
+    --cor-borda-input: #ccc;
+    --cor-placeholder: #999;
+    --cor-fundo-input: #f7f7f7;
+
+    --transicao-padrao: 0.3s ease;
+}
+
+/* ---------- ÁREA DE BUSCA (MOSTRAR/ESCONDER) ---------- */
+.search-section {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.search-section.is-visible {
+    max-height: 120px;
+    padding-bottom: 24px;
+}
+
+/* ---------- BOTÃO DA SETA (TOGGLE) ---------- */
+.toggle-search-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--cor-primaria);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transicao-padrao), transform var(--transicao-padrao);
+}
+
+.toggle-search-button:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+.toggle-search-button::after {
+    content: '';
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
+}
+
+.toggle-search-button.is-visible::after {
+    transform: rotate(-135deg);
+}
+
+/* ---------- LAYOUT DO APP ---------- */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+}
